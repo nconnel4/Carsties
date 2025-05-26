@@ -49,6 +49,7 @@ public class SearchController : ControllerBase
         query.PageSize(searchParams.PageSize);
 
         var result = await query.ExecuteAsync();
+        Console.WriteLine(result.Results);
 
         return Ok(
             new
