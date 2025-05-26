@@ -1,0 +1,71 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  auction-svc:
+    build:
+      context: "/Users/nconnell/code/tutorial/Carsties"
+      dockerfile: "src/AuctionService/Dockerfile"
+      target: "build"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net9.0/AuctionService.dll"
+    environment: {}
+    image: "basepointdesign/auction-svc:dev"
+    ports: []
+    volumes:
+    - "/Users/nconnell/code/tutorial/Carsties/src/AuctionService:/app:rw"
+    - "/Users/nconnell/code/tutorial/Carsties:/src:rw"
+    - "/Users/nconnell/.nuget/packages:/root/.nuget/packages"
+    working_dir: "/app"
+  gateway-svc:
+    build:
+      context: "/Users/nconnell/code/tutorial/Carsties"
+      dockerfile: "src/GatewayService/Dockerfile"
+      target: "build"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net9.0/GatewayService.dll"
+    environment: {}
+    image: "basepointdesign/gateway-svc:dev"
+    ports: []
+    volumes:
+    - "/Users/nconnell/code/tutorial/Carsties/src/GatewayService:/app:rw"
+    - "/Users/nconnell/code/tutorial/Carsties:/src:rw"
+    - "/Users/nconnell/.nuget/packages:/root/.nuget/packages"
+    working_dir: "/app"
+  identity-svc:
+    build:
+      context: "/Users/nconnell/code/tutorial/Carsties"
+      dockerfile: "src/IdentityService/Dockerfile"
+      target: "build"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/IdentityService.dll"
+    environment:
+      ASPNETCORE_STATICWEBASSETS: "/app/bin/Debug/net8.0/IdentityService.staticwebassets.runtime.CT.json"
+    image: "basepointdesign/identity-svc:dev"
+    ports: []
+    volumes:
+    - "/Users/nconnell/code/tutorial/Carsties/src/IdentityService:/app:rw"
+    - "/Users/nconnell/code/tutorial/Carsties:/src:rw"
+    - "/Users/nconnell/.nuget/packages:/root/.nuget/packages"
+    working_dir: "/app"
+  search-svc:
+    build:
+      context: "/Users/nconnell/code/tutorial/Carsties"
+      dockerfile: "src/SearchService/Dockerfile"
+      target: "build"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net9.0/SearchService.dll"
+    environment: {}
+    image: "basepointdesign/search-svc:dev"
+    ports: []
+    volumes:
+    - "/Users/nconnell/code/tutorial/Carsties/src/SearchService:/app:rw"
+    - "/Users/nconnell/code/tutorial/Carsties:/src:rw"
+    - "/Users/nconnell/.nuget/packages:/root/.nuget/packages"
+    working_dir: "/app"
